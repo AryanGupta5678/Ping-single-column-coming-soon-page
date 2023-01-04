@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <script src="https://kit.fontawesome.com/f38d5eec16.js" crossorigin="anonymous"></script>
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .valid{
+      display: none;
+    }
+    
+    .style{
+      text-align: left;
+      margin-left: 1.5rem;
+      color: hsl(354, 100%, 66%);
+    }
+
+    .border{
+      border-color: hsl(354, 100%, 66%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <img src="images/logo.svg" alt="">
+      <h1>We are launching <span>soon!</span></h1>
+    
+      <p>Subscribe and get notified</p>
+    
+      <form action="/">
+        <input type="email" name="email" id="email" placeholder="Your email addess...">
+        <input type="submit" value="Notify Me">
+      </form>
+
+      <p class="valid style" id="valid">Please provide a valid email address</p>
+      <img src="images/illustration-dashboard.png" alt="" id="logo">
+
+      <div class="icon">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+    
+      <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+    </div>
+  </div>
+  <!-- <form action="">
+    <input type="email" name="email" id="email" onkeyup="check()">
+    <input type="submit" value="submit">
+  </form>
+  <p class="valid" id="valid">please provide valid email</p> -->
+
+  <script>
+    // function check(){
+    //   let a = document.getElementById("email")
+    //   // a.addEventListener("keydown", function () {
+    //   //   alert("hii");
+    //   // })
+    //   let b = document.getElementById("valid")
+    //   // console.log(a.value)
+    //   if(a.value.endsWith(".com")){
+    //     b.classList.add("valid")
+    //     document.getElementsByTagName("input")[1].removeAttribute("disabled")
+    //     // alert("hii")
+    //   }
+    //   else{
+    //     b.classList.remove("valid")
+    //     document.getElementsByTagName("input")[1].setAttribute("disabled","true")
+    //   }
+    // }
+
+    document.getElementById("email").addEventListener("keyup", function () {
+      let b = document.getElementById("valid")
+      if(document.getElementById("email").value.endsWith(".com")){
+        b.classList.add("valid")
+        document.getElementById("email").style.borderColor = ""
+        document.getElementsByTagName("input")[1].removeAttribute("disabled")
+      }
+      else{
+        b.classList.remove("valid")
+        document.getElementById("email").style.borderColor = "hsl(354, 100%, 66%)"
+        document.getElementsByTagName("input")[1].setAttribute("disabled","true")
+      }
+    })
+  </script>
+</body>
+</html>
